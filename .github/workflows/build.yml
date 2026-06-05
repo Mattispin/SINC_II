@@ -1,10 +1,19 @@
-name: Build LaTeX PDF
+name: Build and deploy LaTeX PDF
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -20,3 +29,73 @@ jobs:
           root_file: main.tex
           latexmk_use_xelatex: false
           args: -pdf -interaction=nonstopmode -halt-on-error
+
+      - name: Prepare public site
+        if: github.event_name == 'push'
+        run: |
+          mkdir -p public
+          cp main.pdf public/SINC_II_libro_abstracts.pdf
+          cat > public/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="es">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SINC II - Libro de abstracts</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 3rem auto;
+                padding: 0 1.5rem;
+                line-height: 1.6;
+              }
+              h1 {
+                color: #1E73BE;
+              }
+              a.button {
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 0.8rem 1.2rem;
+                background: #1E73BE;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+              }
+              iframe {
+                width: 100%;
+                height: 80vh;
+                margin-top: 2rem;
+                border: 1px solid #ddd;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>SINC II</h1>
+            <h2>Simposio de Investigadores Noveles en Complejidad</h2>
+            <p>Libro de abstracts - Universidad Rey Juan Carlos</p>
+            <a class="button" href="SINC_II_libro_abstracts.pdf">Descargar PDF</a>
+            <iframe src="SINC_II_libro_abstracts.pdf"></iframe>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
