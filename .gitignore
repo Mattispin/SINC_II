@@ -1,0 +1,23 @@
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.gz
+*.bak
+
+# No hace falta subir el PDF generado; GitHub lo compilará
+*.pdfassets/escet.rar
+assets/escet/
+assets/escet.rar
+main.pdf
