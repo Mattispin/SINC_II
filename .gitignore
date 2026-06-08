@@ -17,7 +17,9 @@
 *.bak
 
 # No hace falta subir el PDF generado; GitHub lo compilará
-*.pdfassets/escet.rar
-assets/escet/
+*.pdf
+
+# Archivos auxiliares que no queremos subir
 assets/escet.rar
+assets/escet/
 main.pdf

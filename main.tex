@@ -12,7 +12,10 @@
 \usepackage{pdfpages}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{array}
+\usepackage[protrusion=true,expansion=false]{microtype}
 \usepackage{tikz}
+\usepackage{multicol}
 \geometry{margin=2cm}
 \definecolor{sincblue}{HTML}{1E73BE}
 \definecolor{sincpurple}{HTML}{6D38B8}
@@ -35,16 +38,73 @@
 
 
 \begin{document}
+
+%\begin{titlepage}
+%\centering
+%\vspace*{0.5cm}
+%\includegraphics[width=.72\textwidth]{assets/SINC_LOGO.png}\\[.8cm]
+
+%{\Huge \textbf{Libro de abstracts}\\[2.4cm]}
+%{\Huge\bfseries SINC II\\[.2cm]}
+%{\Large Simposio de Investigadores Noveles en Complejidad\\[.8cm]}
+
+%{\large Universidad Rey Juan Carlos -- 02/06/2026}\\[1cm]
+%\includegraphics[width=.38\textwidth]{assets/URJC.jpg}
+%\end{titlepage}
+
+
+
 \begin{titlepage}
-\centering
-\vspace*{1cm}
-\includegraphics[width=.72\textwidth]{assets/SINC_LOGO.png}\\[.8cm]
-{\Huge\bfseries SINC II\\[.2cm]}
-{\Large Simposio de Investigadores Noveles en Complejidad\\[.8cm]}
-{\Large Libro de abstracts\\[.4cm]}
-{\large Universidad Rey Juan Carlos -- 02/06/2026}\\[1cm]
-\includegraphics[width=.38\textwidth]{assets/URJC.jpg}
+
+\thispagestyle{empty}
+\begin{center}
+
+% Logo principal
+{\vspace{-3cm}\includegraphics[ width=.65\textwidth]{assets/SINC_LOGO.png}
+}
+
+{\vspace{-1cm}\fontsize{20}{36}\selectfont \bfseries SINC II\par}
+
+{\huge Simposio de Investigadores Noveles en Complejidad\par}
+
+% Título principal
+\rule{0.95\textwidth}{0.4pt}
+
+{\fontsize{25}{36}\selectfont \bfseries Libro de resúmenes\par}
+
+\rule{0.95\textwidth}{0.4pt}
+
+
+\vspace{1.5cm}
+
+{\huge
+Universidad Rey Juan Carlos\\[0.2cm]
+\par}
+
+{\Large
+2 de junio de 2026
+\par}
+
+
+
+\vfill
+
+\vspace{0.8cm}
+
+% Logo institucional
+\includegraphics[width=.30\textwidth]{assets/URJC.jpg}\hspace{3cm}
+\includegraphics[width=.45\textwidth]{assets/ESCET.png}
+
+
+\vspace{0.6cm}
+
+\end{center}
 \end{titlepage}
+
+
+
+
+
 
 %\section*{Nota editorial provisional}
 %Este documento es una primera maqueta del libro de abstracts del SINC II. Se ha preparado a partir de los archivos recibidos, conservando los PDFs originales cuando estaban disponibles e incorporando la versión actualizada del abstract de Mattia Coccolo con sus referencias.
@@ -57,43 +117,42 @@
 
 \thispagestyle{plain}
 
-\vspace*{1.5cm}
+\vspace*{1.25cm}
 %\vfill
 
 \begin{center}
-\begin{minipage}{0.82\textwidth}
+\begin{minipage}{0.9\textwidth}
 \large
 \begin{enumerate}
-  \item \textbf{Aplicaciones del álgebra conmutativa y del álgebra real a sistemas de EDOs polinómicas} -- Alexandru Iosif \dotfill pag.\pageref{abs:1}
+  \item \textbf{Aplicaciones del álgebra conmutativa y del álgebra real a sistemas de EDOs polinómicas} \\ \emph{Alexandru Iosif} \dotfill \ \hspace{0.1cm} \pageref{abs:1}
 
-  \item \textbf{Polimerización, replicación y evolución del ARN en el origen de la vida} -- Carla Alejandre \dotfill pag.\pageref{abs:2}
+  \item \textbf{Polimerización, replicación y evolución del ARN en el origen de la vida} \\ \emph{Carla Alejandre} \dotfill \ \hspace{0.1cm} \pageref{abs:2}
 
-  \item \textbf{Sistema dinámico para el vector PageRank con una memoria dependiente del tiempo} -- Daniel José Rodríguez Luis \dotfill pag.\pageref{abs:3}
+  \item \textbf{Sistema dinámico para el vector PageRank con una memoria dependiente del tiempo} \\ \emph{Daniel José Rodríguez Luis} \dotfill \ \hspace{0.1cm} \pageref{abs:3}
 
-  \item \textbf{Propagación no lineal de ultrasonidos en medios viscoelásticos con burbujas: hacia los metamateriales acústicos} -- Elena V. Carreras-Casanova \dotfill pag.\pageref{abs:4}
+  \item \textbf{Propagación no lineal de ultrasonidos en medios viscoelásticos con burbujas: hacia los metamateriales acústicos} \\ \emph{Elena V. Carreras-Casanova} \dotfill \ \hspace{0.1cm} \pageref{abs:4}
 
-  \item \textbf{Conductividad térmica de una cadena de osciladores. El problema de Fermi-Pasta-Ulam-Tsingou} -- Fernán Del Río Martín \dotfill pag.\pageref{abs:5}
+  \item \textbf{Conductividad térmica de una cadena de osciladores. El problema de Fermi-Pasta-Ulam-Tsingou} \\ \emph{Fernán Del Río Martín} \dotfill \ \hspace{0.1cm} \pageref{abs:5}
 
-  \item \textbf{Intermitencia caótica en un láser de clase B con señal inyectada} -- Francisco Javier Marín Rodríguez \dotfill pag.\pageref{abs:6}
+  \item \textbf{Intermitencia caótica en un láser de clase B con señal inyectada} \\ \emph{Francisco Javier Marín Rodríguez} \dotfill \ \hspace{0.1cm} \pageref{abs:6}
 
-  \item \textbf{Clasificación de autómatas celulares bajo diferentes condiciones de contorno usando la distancia de Hamming} -- Gaspar Alfaro \dotfill pag.\pageref{abs:7}
+  \item \textbf{Clasificación de autómatas celulares bajo diferentes condiciones de contorno usando la distancia de Hamming} \\ \emph{Gaspar Alfaro} \dotfill \ \hspace{0.1cm} \pageref{abs:7}
 
-  \item \textbf{Biritmicidad estocástica fuera de la región de coexistencia en el modelo de Hindmarsh-Rose} -- Ignacio Ortega Piwonka \dotfill pag.\pageref{abs:8}
+  \item \textbf{Biritmicidad estocástica fuera de la región de coexistencia en el modelo de Hindmarsh-Rose} \\ \emph{Ignacio Ortega Piwonka} \dotfill \ \hspace{0.1cm} \pageref{abs:8}
 
-  \item \textbf{Término de amortiguamiento fraccionario en osciladores no lineales} -- Mattia Coccolo \dotfill pag.\pageref{abs:9}
+  \item \textbf{Término de amortiguamiento fraccionario en osciladores no lineales} \\ \emph{Mattia Coccolo} \dotfill \ \hspace{0.1cm} \pageref{abs:9}
 
-  \item \textbf{Diferenciación ontológica y navegación semántica en redes léxicas} -- Pablo García \dotfill pag.\pageref{abs:10}
+  \item \textbf{Diferenciación ontológica y navegación semántica en redes léxicas} \\ \emph{Pablo García} \dotfill \ \hspace{0.1cm} \pageref{abs:10}
 
-  \item \textbf{Dinámica de solitones en generalizaciones complejas de la ecuación de mKdV} -- Paz Albares Vicente \dotfill pag.\pageref{abs:11}
+  \item \textbf{Dinámica de solitones en generalizaciones complejas de la ecuación de mKdV} \\ \emph{Paz Albares Vicente} \dotfill \ \hspace{0.1cm} \pageref{abs:11}
 
-  \item \textbf{Resiliencia inducida por dispersión a fluctuaciones ambientales estocásticas en poblaciones con efecto Allee} -- Rodrigo Crespo Miguel \dotfill pag.\pageref{abs:12}
+  \item \textbf{Resiliencia inducida por dispersión a fluctuaciones ambientales estocásticas en poblaciones con efecto Allee} \\ \emph{Rodrigo Crespo Miguel} \dotfill \ \hspace{0.1cm} \pageref{abs:12}
 
-  \item \textbf{Eficiencia termodinámica de estructuras disipativas acopladas} -- Álvaro García López \dotfill pag.\pageref{abs:13}
+  \item \textbf{Eficiencia termodinámica de estructuras disipativas acopladas} \\ \emph{Álvaro García López} \dotfill \ \hspace{0.1cm} \pageref{abs:13}
 \end{enumerate}
 
 \end{minipage}
 \end{center}
-
 
 
 \clearpage
@@ -161,33 +220,36 @@ Este libro recoge los resúmenes de las contribuciones presentadas en SINC II. M
 
 \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south east]
-    at ([xshift=-0.8cm,yshift=0.8cm]current page.south east)
-    {\includegraphics[width=3.8cm]{assets/SINC_LOGO.png}};
+    at ([xshift=-11.8cm,yshift=27.2cm]current page.south east)
+    {\includegraphics[width=9cm]{assets/urjc_escet.png} };
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east]
+    at ([xshift=-1.cm,yshift=25.6cm]current page.south east)
+    {\includegraphics[width=4.8cm]{assets/SINC_LOGO.png} };
 \end{tikzpicture}
 
-\vspace*{1.5cm}
+\vspace*{.5cm}
 
 \begin{center}
-    {\Huge\bfseries Abstract #1}
+    {\LARGE\bfseries Contribución #1} \\
 \end{center}
 
-\vfill
+%\vfill
 
-\begin{center}
-    {\LARGE\bfseries #2}
-\end{center}
+%\begin{center}
+%    {\LARGE\bfseries #2}
+%\end{center}
 
-\vfill
-\clearpage
+%\vfill
+%\clearpage
 }
 \newenvironment{sincabstract}[4]{%
 \begin{center}
 {\Large\bfseries #1\par}
 \vspace{0.6cm}
 {\normalsize #2\par}
-\vspace{0.25cm}
 {\small #3\par}
-\vspace{0.25cm}
 {\small\texttt{#4}\par}
 \end{center}
 \vspace{0.4cm}
@@ -222,6 +284,7 @@ donde $P_i$ son funciones polinómicas en las funciones $x_1,\ldots,x_n$ y racio
 
 \keywords{reducción de la complejidad, dinámica no lineal, álgebra aplicada y computacional.}
 
+\begin{multicols}{2}
 \begin{enumerate}[label={[\arabic*]},leftmargin=*]
 \item A. Iosif, Duality in mass-action networks, Preprint (2026).
 \item A. Desoeuvres, A. Iosif, C. Lüders, O. Radulescu, H. Rahkooy, M. Seiß, T. Sturm, A Computational Approach to Polynomial Conservation Laws, \textit{SIAM Journal on Applied Dynamical Systems} 23(1), (2024).
@@ -230,6 +293,8 @@ donde $P_i$ son funciones polinómicas en las funciones $x_1,\ldots,x_n$ y racio
 \item C. Conradi, A. Iosif, and T. Kahle, Multistationarity in the space of total concentrations for systems that admit a monomial parametrization, \textit{Bulletin of Mathematical Biology} 81(10) (2019).
 \item A. Iosif, Algebraic Methods for detecting multistationarity in mass-action network, PhD Thesis, Otto-von-Guericke Universität, 2019.
 \end{enumerate}
+
+\end{multicols}
 \end{sincabstract}
 
 % -----------------------------------------------------------------------------
@@ -244,21 +309,30 @@ donde $P_i$ son funciones polinómicas en las funciones $x_1,\ldots,x_n$ y racio
 \textsuperscript{2} Grupo Interdisciplinar de Sistemas Complejos (GISC), Madrid, España}
 {calejandre@cab.inta-csic.es}
 
+\vspace{-0.5cm}
+
 \paragraph{Resumen.}
 Cómo surgió la vida a partir de materia no viva hace aproximadamente 4 mil millones de años es una de las preguntas abiertas más profundas de la ciencia. Dado que la evidencia empírica directa de la Tierra primitiva es escasa, este problema resulta especialmente adecuado para su exploración teórica y computacional. En nuestra investigación abordamos este desafío desde una perspectiva de sistemas, centrándonos en el aumento abrupto de complejidad que se produjo cuando aparecieron las primeras moléculas de ARN y comenzaron a experimentar evolución darwiniana. El ARN es el único biopolímero natural conocido capaz de codificar información genética y, al mismo tiempo, desempeñar funciones catalíticas, acoplando de forma efectiva genotipo y fenotipo dentro de un único marco molecular. Esta propiedad constituye la base de la hipótesis del mundo de ARN [1]. Sin embargo, sigue siendo un reto comprender cómo pudieron surgir los primeros polímeros de ARN y cómo pudieron replicarse y evolucionar posteriormente en la Tierra primitiva, en ausencia de enzimas complejas e incluso de mecanismos de replicación precisos. Hemos desarrollado un marco teórico y computacional denominado EarlyWorld. Este modelo se utilizó inicialmente para demostrar que la polimerización no enzimática de ribonucleótidos y la replicación dependiente de molde de polímeros de ARN, suficientemente largos como para plegarse y adquirir funciones básicas ($>15$ nt), eran factibles en interfaces arcilla-agua en la Tierra prebiótica [2]. El requisito esencial es que el entorno físico-químico estuviera caracterizado por oscilaciones de gran amplitud con una periodicidad compatible con la dinámica de las mareas vivas. Actualmente estamos aplicando EarlyWorld al estudio del potencial evolutivo de los polímeros primordiales de ARN. Considerando tanto factores de selección ambientales como internos, e incorporando los efectos de los fenotipos de ARN sobre su propia replicación, buscamos esclarecer si la complejificación, la selección y, en última instancia, la evolución del ARN en la Tierra prebiótica pudieron ser posibles a partir de un sistema basado únicamente en mecanismos aleatorios y de ligación dependiente de molde.
 %\enlargethispage{1.75\baselineskip}
+
+\begin{multicols}{2}
+
 \begin{center}
-\includegraphics[width=0.5\textwidth]{figures/carla_alejandre_fig01_p1_crop.png}
+\includegraphics[width=0.48\textwidth]{figures/carla_alejandre_fig01_p1_crop.png}
+
 
 {\small Figura 1. Esquema conceptual del marco EarlyWorld para la polimerización, replicación y evolución del ARN en el origen de la vida.}
 \end{center}
 \vspace{-1.8em}
 \keywords{origen de la vida, ARN, replicación, evolución prebiótica, complejidad molecular.}
 
+
 \begin{enumerate}[label={[\arabic*]},leftmargin=*]
 \item W. Gilbert, Origin of life: The RNA world, \textit{Nature} 319(6055), 618--618 (1986).
 \item C. Alejandre, A. Aguirre-Tamaral, C. Briones, J. Aguirre, Polymerization and replication of primordial RNA induced by clay-water interface dynamics, \textit{Communications Chemistry} 8(1), 236 (2025).
 \end{enumerate}
+
+\end{multicols}
 \end{sincabstract}
 
 
@@ -308,12 +382,14 @@ Adicionalmente, para el caso $\omega(t)=e^t\cos^2(t)$ con $t\geq 0$, presentamos
 
 \keywords{sistema dinámico, comportamiento asintótico.}
 
+\begin{multicols}{2}
 \begin{enumerate}[label={[\arabic*]},leftmargin=*]
 \item D. Aleja, J. Flores, E. Primo, D. Rodríguez, M. Romance, Fixed points of personalized PageRank centrality: From irreducible to reducible networks, \textit{Linear Algebra and its Applications} 733, 233--272 (2026).
 \item P. Boldi, M. Santini, S. Vigna, PageRank: Functional dependencies, \textit{ACM Transactions on Information Systems (TOIS)} 27(4) (2009).
 \item D. F. Gleich, R. A. Rossi, A dynamical system for pagerank with time-dependent teleportation, \textit{Internet Mathematics} 10, 188--217 (2014).
 \item C. D. Meyer, \textit{Matrix Analysis and Applied Linear Algebra}, Society for Industrial and Applied Mathematics, Philadelphia (2000).
 \end{enumerate}
+\end{multicols}
 \end{sincabstract}
 
 % -----------------------------------------------------------------------------
@@ -431,7 +507,7 @@ También comparamos diferentes condiciones de frontera, periódicas o fijas, y d
 \begin{sincabstract}
 {Biritmicidad estocástica fuera de la región de coexistencia en el modelo de Hindmarsh-Rose}
 {Ignacio Ortega Piwonka\textsuperscript{1}, Javier Used\textsuperscript{1}, Jesús Seoane\textsuperscript{1}, Miguel A. F. Sanjuán\textsuperscript{1,2}}
-{\textsuperscript{1} onlinear Dynamics, Chaos and Complex Systems Group, Departamento de Física, Universidad Rey Juan Carlos, Tulipán s/n, Móstoles, 28933, Madrid, Spain\\
+{\textsuperscript{1} Nonlinear Dynamics, Chaos and Complex Systems Group, Departamento de Física, Universidad Rey Juan Carlos, Tulipán s/n, Móstoles, 28933, Madrid, Spain\\
 \textsuperscript{2} Real Academia de Ciencias, Madrid, España}
 {Juanignacio.ortega@urjc.es}
 
@@ -487,11 +563,7 @@ La charla se basa en varios trabajos recientes sobre amortiguamiento fraccionari
 \begin{sincabstract}
 {Diferenciación ontológica y navegación semántica en redes léxicas}
 {Pablo García}
-{Complex Systems Group, Department of Applied Mathematics,
-Universidad Polit´ecnica de Madrid, Avenida Juan de Herrera 6, 28040 Madrid, Spain.
-2Complex Systems Group, Escuela T´ecnica Superior de Ingeniería Agronómica,
-Alimentaria y de Biosistemas, Universidad Politécnica de Madrid,
-Avenida Puerta de Hierro 2-4, 28040 Madrid, Spain.}
+{Complex Systems Group, Universidad Politécnica de Madrid, Madrid, Spain}
 {pablo.garcia.cuadrillero@upm.es}
 
 \paragraph{Resumen.}
@@ -572,23 +644,27 @@ Muchas especies son insostenibles a densidades de población bajas (efecto Allee
 {Eficiencia termodinámica de estructuras disipativas acopladas}
 {Álvaro García López\textsuperscript{1}, Inés Pérez Mariño\textsuperscript{1}, Alfonso Delgado-Bonal}
 {\textsuperscript{1} Nonlinear Dynamics, Chaos and Complex Systems Group, Departamento de Física, Universidad Rey Juan Carlos, Tulipán s/n, Móstoles, 28933, Madrid, Spain}
-{alvaro@lopez.urjc.es}
+{alvaro.garcia@urjc.es}
+
+\vspace{-0.5cm}
 
 \paragraph{Resumen.}
 Las estructuras disipativas son sistemas dinámicos abiertos que mantienen una organización coherente mediante el intercambio continuo de energía y materia con el entorno y la generación de entropía [1]. Un análisis reciente de la rueda hidráulica de Malkus--Lorenz interpretó el sistema de Lorenz como una máquina térmica y mostró que su eficiencia aumenta al alejarse del equilibrio, aunque presenta caídas pronunciadas cerca de la transición al caos [2]. En este trabajo se extiende ese enfoque a estructuras disipativas acopladas. Para ello, se estudian dos tipos de acoplamiento ---maestro-esclavo y difusivo simétrico--- y se demuestran leyes que permiten describir los sistemas compuestos como una única máquina equivalente con una eficiencia bien definida. Aplicando estos resultados a ruedas hidráulicas de Lorenz acopladas, se obtienen fórmulas de eficiencia coherentes con el balance energético del sistema [3]. Las simulaciones numéricas muestran que el acoplamiento en serie tiende a aumentar la eficiencia termodinámica, mientras que el acoplamiento en paralelo incrementa el flujo total de energía y promedia la eficiencia de los sistemas. Además, la sincronización suele ser neutra o favorable para la eficiencia, salvo en regiones muy específicas de parámetros, y el acoplamiento altera los patrones de generación de entropía. En conjunto, los resultados proponen un marco matemáticamente riguroso y transparente para definir y calcular la eficiencia termodinámica en redes de flujo complejas, con posibles aplicaciones al estudio energético de sistemas complejos.
 
 \begin{center}
-\includegraphics[width=0.68\textwidth]{figures/alvaro_garcia_fig01_p1_crop.png}
+\includegraphics[width=0.66\textwidth]{figures/alvaro_garcia_fig01_p1_crop.png}
 
-\vspace{-0.4em}
+\vspace{-0.7em}
 {\small Figura 1. Esquema de estructuras disipativas acopladas y eficiencia termodinámica.}
 \end{center}
 
-\vspace{-0.3em}
+\vspace{-0.6em}
 
 \keywords{estructuras disipativas, ruptura de la simetría, autooscilaciones, eficiencia termodinámica, sistema de Lorenz, sistemas fuera del equilibrio.}
 
 \vspace{-0.4em}
+
+\begin{multicols}{2}
 
 {\small
 \begin{enumerate}[label={[\arabic*]},leftmargin=*,itemsep=0.15em,topsep=0.2em]
@@ -599,6 +675,7 @@ Las estructuras disipativas son sistemas dinámicos abiertos que mantienen una o
 \item Á. G. López, P. I. Mariño, A. Delgado-Bonal, The thermodynamic efficiency of coupled dissipative structures, arXiv:2604.16549 (2026).
 \end{enumerate}
 }
+\end{multicols}
 \end{sincabstract}
 
 \clearpage
