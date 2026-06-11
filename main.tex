@@ -155,7 +155,7 @@ Universidad Rey Juan Carlos\\[0.2cm]
 \end{center}
 
 \clearpage
-\includepdf[pages=-]{Programa_SINC_2026.pdf}
+\includepdf[pages=-,pagecommand={\thispagestyle{plain}}]{Programa_SINC_2026.pdf}
 \clearpage
 
 \clearpage
@@ -219,7 +219,7 @@ Este libro recoge los resúmenes de las contribuciones presentadas en SINC II. M
 \phantomsection
 \addcontentsline{toc}{section}{#2}
 \label{abs:#1}
-\thispagestyle{empty}
+\thispagestyle{plain}
 
 \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south east]
